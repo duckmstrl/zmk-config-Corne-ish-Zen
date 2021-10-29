@@ -23,10 +23,19 @@
                 compatible = "zmk,behavior-hold-tap";
                 label = "HOMEROW_MODS";
                 #binding-cells = <2>;
-                tapping-term-ms = <150>;
+                tapping-term-ms = <165>;
                 quick_tap_ms = <0>;
                 flavor = "tap-preferred";
                 bindings = <&kp>, <&kp>;
+            };
+            qt: quicktap_layers {
+                compatible = "zmk,behavior-hold-tap";
+                label = "QUICKTAP_LAYERS";
+                #binding-cells = <2>;
+                tapping-term-ms = <150>;
+                quick_tap_ms = <100>;
+                flavor = "tap-preferred";
+                bindings = <&mo>, <&kp>;
             };
         };
 
@@ -36,10 +45,10 @@
                 default_layer {
                         label = " base";
                         bindings = <
-   &kp TAB   &kp Q      &kp W      &hm RALT F &kp P       &kp B    &kp J &kp L       &hm RATL U &kp Y        &kp QUOT   &kp BKSP
+   &kp TAB   &kp Q      &kp W      &hm RALT F &kp P       &kp B    &kp J &kp L       &hm RALT U &kp Y        &kp QUOT   &kp BKSP
    &kp CAPS  &hm LGUI A &hm LALT R &hm LCTL S &hm LSHFT T &kp G    &kp M &hm LSHFT N &hm LCTL E &hm LALT I   &hm LGUI O &kp ENTER
    &kp LSHFT &kp Z      &kp X      &kp C      &kp D       &kp V    &kp K &kp H       &kp CMMA   &kp DOT      &kp FSLH   &kp RSFT
-                             &kp ESC &lt NAV SPC &lt ADJUST TAB    &lt CONFIG ENTER &lt NUM BKSP &kp DEL
+                             &kp ESC &qt NAV SPC &lt ADJUST TAB    &lt CONFIG ENTER &qt NUM BKSP &kp DEL
                         >;
                 };
 
